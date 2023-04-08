@@ -1,0 +1,31 @@
+// 搜索时各个参数
+key:'decrypt'
+key:2wVGQU6CMFpZzMQX
+iv:'0102030405060708'
+
+// 获取播放地址时各个参数
+请求参数：
+code: undefined
+filename: ""
+id: 125802
+play: true
+q: "128"
+src: "kw"
+verify_code: undefined
+
+
+_0x3a1f99[_0x341e88[_0x56ae('0x364', 'iFBC')]] = function(_0x484d9a) {
+	return _0x341e88[_0x56ae('0x365', 'mbzd')] && (_0x484d9a = {
+		'params': _0x1391c2[_0x56ae('0x10a', 'dWyE')](JSON[_0x56ae('0x366', 'N8ys')](_0x484d9a)),
+		'sec_key': _0x10c252
+	},
+	_0x484d9a = _0x137d51['a'][_0x56ae('0x367', '4QBC')](_0x484d9a)),
+	_0x3a1f99[_0x3a3bc8[_0x341e88[_0x56ae('0x368', '%Y4U')]]](_0x341e88[_0x56ae('0x369', 'sryo')], _0x484d9a, _0x341e88[_0x56ae('0x36a', 'iFBC')]);
+}
+
+
+key:"kz6GRspPcKMrNhD5"
+iv:'0102030405060708'
+
+'params': _0x1391c2[_0x56ae('0x10a', 'dWyE')](JSON[_0x56ae('0x366', 'N8ys')](_0x484d9a)),
+'sec_key': "O3RUgj7ZP6DUXhYnq+n2zwUYgSD8CFbAGCSroo85dwc2vZBUdCZqmi40BKJaSNdi0ZxM33cHniq6Hp+WcNwrHYS6yx4/+t7M4fan+2ASqS2aqZ2/cscpNBaPHuI5xhFR3gTKpiHyZXDtjA30eLAdVWrcFCf3SY9n87dkCq7eo48="

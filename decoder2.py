@@ -1,7 +1,8 @@
-import os,shutil,json,requests
-from  binascii import hexlify, b2a_hex
+import os, shutil, json, requests
+from binascii import hexlify, b2a_hex
 from Crypto.Cipher import AES
 import base64
+import ssl
 
 class Encrypyed():
     def __init__(self):
@@ -13,7 +14,8 @@ class Encrypyed():
     def create_secret_key(self,size):
         ''' 生成十六位的随机字符串'''
         return hexlify(os.urandom(size))[:16].decode('utf-8')
-
+    # 注意aes加密需要注意四个东西，第一明文(要加密的东西),第二密文(所谓的key),第三偏移量(也就是这里的iv)
+    # 第四加密的模式(这个是在js代码中看见的，是cbc模式)
     def aes_encrypt(self,text, key):
         ''' AES加密'''
         iv = '0102030405060708'
@@ -41,7 +43,7 @@ class Encrypyed():
         data = {'params': str(encText), 'encSecKey': encSecKey}
         return data
 
-def main(key_value):
+def wangyi(key_value):
     # 查询符合条件歌曲的id
     url = 'https://music.163.com/weapi/cloudsearch/get/web?csrf_token='
     # # 歌曲的具体url
@@ -53,13 +55,16 @@ def main(key_value):
     # post_data1 = {"ids":"[191254]","br":192000,"csrf_token":""}
     # data = do.work(post_data1)
     headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
         'Referer': 'https://music.163.com/search/',
     }
+    proxies = {'http': '114.99.3.39:3000',
+               'http':'175.43.179.83:9999'
+               }
     session = requests.Session()
     session.headers = headers
     # print(data)
-    result = session.post(url, data=data,verify=False).json()
+    result = session.post(url, data=data, verify=False, proxies=proxies, timeout=5).json()
     # print(result)
     song_id_list = []
     if result !='':
@@ -74,6 +79,7 @@ def main(key_value):
             song_id_list.append(key)
     return song_id_list
 if __name__ == '__main__':
-    key_value = '周杰伦'
-    kk = main(key_value)
+    key_value = input('请输入你要查找的歌曲或者歌手名字')
+    kk = wangyi(key_value)
     print(kk)
+    print(len(kk))

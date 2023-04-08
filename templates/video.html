@@ -22,8 +22,8 @@
             border: 1px solid #ac2925;
         }
         .info{
-            width:40px;
-            height:30px;
+            width: 50px;
+            height:60px;
             border: 1px solid #761c19;
             float: left;
             margin-left: 5px;
@@ -31,12 +31,22 @@
             text-align: center;
             margin-top: 5px;
         }
+         .info a{
+             font-size: 15px;
+         }
+        .select{
+            height:40px;
+        }
     </style>
 </head>
 <body>
 <div class="feather">
     <form method="post">
     <div class="search">
+        <select name="select_id" class="select" id="select_id">
+                <option value="腾讯视频">腾讯视频</option>
+                <option value="优酷视频">优酷视频</option>
+            </select>
         <input placeholder="请输入你要查找的电视剧名字或者电影名字" name="search_key">
         <input type="submit" value="查找">
     </div>
@@ -45,7 +55,7 @@
     {% if datas %}
         {% if datas['statu'] =='0' %}
         <div class="info">{{ datas['info'] }}</div>
-        {% else %}
+        {% elif datas['statu'] == '1' %}
             {% for i in range(1,datas['length']) %}
                 <div class="info"><a href="{{ datas['info'][i] }}"> {{ i }}</a></div>
             {% endfor %}
@@ -54,6 +64,17 @@
                     <div>已更新完</div>
                 {% else %}
                     <div>更新到{{ datas['info'][0] }}集</div>
+                {% endif %}
+            {% endif %}
+        {% else %}
+            {% for i in range(0,datas['length']) %}
+                <div class="info"><a href="{{ datas['info'][i][1] }}"> {{ datas['info'][i][0] }}</a></div>
+            {% endfor %}
+            {% if datas['length']> 2 %}
+                {% if datas['info'][0]=='0' %}
+                    <div>已更新完</div>
+                {% else %}
+                    <div>更新到{{ datas['length'] }}集</div>
                 {% endif %}
             {% endif %}
         {% endif %}
