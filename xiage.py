@@ -9,20 +9,23 @@ import time
 网址为：https://music.y444.cn/#/
 '''
 
+
 class myAES(object):
     def __init__(self):
         # CBC模式下，数据长度需要是16字节的整数倍
         self.BLOCK_SIZE = 16
         # 偏移量
         self.iv = '0102030405060708'
-        #　解密密钥
+        # 　解密密钥
         self.decryptKey = '2wVGQU6CMFpZzMQX'
         # 注意这里的加密key和sec_key是对应的
         self.encryptKey = 'HHij7Xc6dkDe6izN'
         self.sec_key = "cVstaEdlc/VXLXjusGz88EwjJlkZMC0UMSi2KIZNTgPZhHaPNEMn+KttW9A83NXCOiyeGwXB10KghIk4NG8XsEZpLvjoqhuKmdUjAye4Xf/F3ySEPTBdJ1RBgGCBy4jA6me81GTRcsF88Zd7Ei5NjUUb2hqyAbZY4eqCqohiE5w="
+
     # 填充，使得数据对齐16字节
-    def pad(self,text):
-        return text+(self.BLOCK_SIZE - len(text) % self.BLOCK_SIZE) * chr(self.BLOCK_SIZE - len(text) % self.BLOCK_SIZE)
+    def pad(self, text):
+        return text + (self.BLOCK_SIZE - len(text) % self.BLOCK_SIZE) * chr(self.BLOCK_SIZE - len(text) % self.BLOCK_SIZE)
+
     # 去掉填充，还原数据
     def unpad(self, text):
         return text[:-ord(text[len(text) - 1:])]
@@ -44,20 +47,21 @@ class myAES(object):
         rdd = base64.b64encode(result).decode("UTF8")
         return rdd
 
+
 class Song(object):
     def __init__(self):
         self.aes = myAES()
         # 防止请求过于频繁，用于请求间隔时间
-        self.sleep_time = 0.06
+        self.sleep_time = 0.005
         self.headers = {
             "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36",
             "referer": "https://music.y444.cn/",
         }
 
     # 当type=1时，表示post请求，为0时表示get请求
-    def request_data(self, url, data={}, type=0):
+    def request_data(self, url, data={}, requestType=0):
         response = None
-        if type:
+        if requestType:
             response = requests.post(url, data, headers=self.headers)
         else:
             response = requests.get(url, headers=self.headers)
@@ -67,7 +71,7 @@ class Song(object):
             print("请求失败")
             return ""
 
-    def search_song_Byname(self, name, page=1, size=2):
+    def search_song_Byname(self, name, page=1, size=15):
         """
         :param name: 需要搜索的歌手名或者歌曲名
         :param page: 当前搜索的第几页
@@ -87,18 +91,19 @@ class Song(object):
             row_data["song_name"] = song["name"]
             row_data["song_url"] = self.get_song_url_by_id(song["id"])
             row_data["songer"] = song["author"]
-            row_data["song_lrc"] = self.get_song_lrc_by_id(song["id"], song["name"], song["author"])
+            # todo 歌词暂未返回
+            # row_data["song_lrc"] = self.get_song_lrc_by_id(song["id"], song["name"], song["author"])
             data.append(row_data)
         return data
 
-    def get_song_url_by_id(self, id=0):
+    def get_song_url_by_id(self, songId=0):
         """
-        :param id: 歌曲id
+        :param songId: 歌曲id
         :return: 歌曲mp3路径
         """
         text = {
             "filename": "",
-            'id': id,
+            'id': songId,
             'play': 'true',
             'q': "128",
             'src': "kw",
@@ -114,14 +119,15 @@ class Song(object):
         result = json.loads(self.aes.decrypt(result))
         return result.get("url").get("remote")
 
-    def get_song_lrc_by_id(self, id=0, songName="", songer=""):
-        url = "https://music.y444.cn/api/v1/search/lyric/lrc?id={}&src=kw&name={}".format(id, songName+'-'+songer)
+    def get_song_lrc_by_id(self, songId=0, songName="", songEr=""):
+        url = "https://music.y444.cn/api/v1/search/lyric/lrc?id={}&src=kw&name={}".format(songId, songName + '-' + songEr)
         result = requests.get(url, headers=self.headers)
         return result.text
 
+
 def work(key):
-    song = Song()
-    return song.search_song_Byname(key)
+    return Song().search_song_Byname(key)
+
 
 if __name__ == '__main__':
     # key = "周杰伦"
@@ -129,4 +135,4 @@ if __name__ == '__main__':
     # data = get_song_url_by_id()
     # print(aes_dencrypt(data['data']))
     song = Song()
-    print(song.search_song_Byname("周杰伦"))
+    print(song.search_song_Byname("搁浅"))

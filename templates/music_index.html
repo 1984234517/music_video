@@ -39,6 +39,7 @@
                 <option value="酷我音乐">酷我音乐</option>
                 <option value="酷狗音乐">酷狗音乐</option>
                 <option value="百度音乐">百度音乐</option>
+                <option value="下载吧">下载吧</option>
             </select>
             <input type="text" placeholder="请输入你要查询的内容" class="key " name="query_value">
         </form>
@@ -330,8 +331,7 @@
 		childList.forEach(function(value,index){
 			value.style.background=otherColor;
 		})
-
-		IdDom(domName).childNodes[index+1].style.background=selectColor;
+		IdDom(domName).childNodes[index].style.background=selectColor;
 	};
 
 	/*

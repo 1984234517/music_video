@@ -4,17 +4,19 @@
     <title>Title</title>
     <style type="text/css">
         .feather{
-            width:40%;
+            width:50%;
             margin: 0px auto;
             border: 2px solid #5bc0de;
+            height: 200px;
         }
         .feather .search{
-            width:70%;
+            width:100%;
+            height:40px;
             margin: 0px auto;
         }
-        .feather .search input{
-            width:100%;
-            height:30px;
+        .feather input{
+            width: 50%;
+            height: 40px;
         }
         .feather .info_item{
             width:100%;
@@ -27,44 +29,51 @@
             border: 1px solid #761c19;
             float: left;
             margin-left: 5px;
-            line-height: 30px;
+            line-height: 25px;
             text-align: center;
             margin-top: 5px;
         }
          .info a{
-             font-size: 15px;
+             {#font-size: 15px;#}
          }
         .select{
             height:40px;
+        }
+        .item{
+            width: 100%;
+            height: 100%;
         }
     </style>
 </head>
 <body>
 <div class="feather">
-    <form method="post">
+    <form method="post" id="myform">
     <div class="search">
         <select name="select_id" class="select" id="select_id">
                 <option value="腾讯视频">腾讯视频</option>
                 <option value="优酷视频">优酷视频</option>
             </select>
-        <input placeholder="请输入你要查找的电视剧名字或者电影名字" name="search_key">
-        <input type="submit" value="查找">
+        <select name="base_url_id" class="select" id="base_url_id">
+                <option value="https://jx.xmflv.com/?url=">默认接口1</option>
+                <option value="https://jx.jsonplayer.com/player/?url=">默认接口2</option>
+                <option value="https://okjx.cc/?url=">默认接口3</option>
+                <option value="https://jx.aidouer.net/?url=">默认接口4</option>
+                <option value="http://vip.nidecms.com/include/player/player.php?url=">默认接口5</option>
+                <option value="https://www.nxflv.com/?url=">默认接口6</option>
+            </select>
+        <input placeholder="请输入你要查找的电视剧或者电影名字" name="search_key" id="search_key">
     </div>
     </form>
+    <button value="搜索" class="search"  onclick="mycheck()">搜索</button>
     <div class="info_item">
     {% if datas %}
         {% if datas['statu'] =='0' %}
         <div class="info">{{ datas['info'] }}</div>
         {% elif datas['statu'] == '1' %}
-            {% for i in range(1,datas['length']) %}
-                <div class="info"><a href="{{ datas['info'][i] }}"> {{ i }}</a></div>
+            {% for i in range(0,datas['length']) %}
+                <div class="info"><a class="item" href="{{ datas['info'][i][1] }}" id="{{ i }}" onmouseover="changeUrl({{ i }}, '{{ datas['info'][i][1] }}')"> {{ datas['info'][i][0] }}</a></div>
             {% endfor %}
             {% if datas['length']> 2 %}
-                {% if datas['info'][0]=='0' %}
-                    <div>已更新完</div>
-                {% else %}
-                    <div>更新到{{ datas['info'][0] }}集</div>
-                {% endif %}
             {% endif %}
         {% else %}
             {% for i in range(0,datas['length']) %}
@@ -82,4 +91,26 @@
     </div>
 </div>
 </body>
+<script type="text/javascript" src="{{ url_for('static',filename='js/jquery-2.1.0.js') }}" ></script>
+<script type="text/javascript">
+    function changeUrl(id, preUrl) {
+        {#console.log(preUrl);#}
+        var options=$("#base_url_id option:selected");
+        var baseUrl = options.val();
+        var url = document.getElementById(id);
+        {#console.log(url.getAttribute("href"));#}
+        url.href = baseUrl+preUrl;
+        {#console.log(url.href);#}
+    }
+
+     function mycheck(){
+        var search_content = $("#search_key").val();	//获取input框内的值
+        if(search_content == null || search_content == ""){
+                alert("必须填写搜索内容");	//如果值为空，提示用户填写
+                return false;
+        }else{
+            $("#myform").submit();
+        }
+    }
+</script>
 </html>
