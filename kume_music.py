@@ -42,8 +42,9 @@ def get_song_info(keyword, song_size=30):
         'pn': '1',
         'rn': song_size,
         'httpsStatus': '1',
-        'reqId': 'e3300640-a607-11ec-910f-cd33d72d1993',
+        'reqId': "fe2a41b0-eaf6-11ed-a495-8df063411680",
     }
+    # "fe2a41b0-eaf6-11ed-a495-8df063411680"
     url = url +'?'+parse.urlencode(data)
     print(url)
     try:
@@ -105,7 +106,8 @@ def get_song_url(song_rids, keyword):
             # print(res)
             if(res.get('code') and res['code']==-1):
                 print(res['msg'])
-                exit(0)
+                song_url.append("")
+                continue
 
             song_url.append(res['data']['url'])
         else:
@@ -117,6 +119,8 @@ def kume(keyword):
     song_url = get_song_url(song_rid, keyword)
     resulst = []
     for i in range(len(songer_name)):
+        if(song_url[i] == ""):
+            continue
         temp = dict()
         temp['song_name'] = song_name[i]
         temp['song_url'] = song_url[i]

@@ -6,6 +6,7 @@ from xiage import Song
 from qq_music import get_song
 from get_video import get_aim_video
 from yocool import get_deatil
+from miGu import miGuSong
 import logging as log
 from get_video_2 import Video
 app = Flask(__name__)
@@ -54,6 +55,9 @@ def search():
         elif check_vlaue == "下载吧":
             song = Song()
             song_id = song.search_song_Byname(key_vlaue)
+        elif check_vlaue == '咪咕音乐':
+            mi = miGuSong()
+            song_id = mi.main(key_vlaue)
         if song_id != '':
             data = dict(data=song_id, statu=0)
             return jsonify(data)

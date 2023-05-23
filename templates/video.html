@@ -2,12 +2,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/bgImg.css') }}">
     <style type="text/css">
         .feather{
-            width:50%;
+            text-align:center;
+            width:100%;
             margin: 0px auto;
             border: 2px solid #5bc0de;
-            height: 200px;
         }
         .feather .search{
             width:100%;
@@ -25,7 +26,7 @@
         }
         .info{
             width: 50px;
-            height:60px;
+            height: 50px;
             border: 1px solid #761c19;
             float: left;
             margin-left: 5px;
@@ -43,9 +44,14 @@
             width: 100%;
             height: 100%;
         }
+        .right{
+            width: 65%;
+            height: 450px;
+        }
     </style>
 </head>
 <body>
+<div id="background" class="wall">
 <div class="feather">
     <form method="post" id="myform">
     <div class="search">
@@ -65,13 +71,13 @@
     </div>
     </form>
     <button value="搜索" class="search"  onclick="mycheck()">搜索</button>
-    <div class="info_item">
+    <div class="info_item left">
     {% if datas %}
         {% if datas['statu'] =='0' %}
         <div class="info">{{ datas['info'] }}</div>
         {% elif datas['statu'] == '1' %}
             {% for i in range(0,datas['length']) %}
-                <div class="info"><a class="item" href="{{ datas['info'][i][1] }}" id="{{ i }}" onmouseover="changeUrl({{ i }}, '{{ datas['info'][i][1] }}')"> {{ datas['info'][i][0] }}</a></div>
+                <div class="info"><a class="item" href="javascript:void(0)" value="{{ datas['info'][i][1] }}" id="{{ i }}" onmouseover="changeUrl({{ i }}, '{{ datas['info'][i][1] }}')" onclick="playVideo({{ i }})"> {{ datas['info'][i][0] }}</a></div>
             {% endfor %}
             {% if datas['length']> 2 %}
             {% endif %}
@@ -89,18 +95,22 @@
         {% endif %}
     {% endif %}
     </div>
+        <iframe id="ifram_id" class="right" src="" scrolling="auto" allowfullscreen="" frameborder="0"></iframe>
+</div>
 </div>
 </body>
 <script type="text/javascript" src="{{ url_for('static',filename='js/jquery-2.1.0.js') }}" ></script>
 <script type="text/javascript">
+    var ifram_id = document.getElementById("ifram_id");
     function changeUrl(id, preUrl) {
-        {#console.log(preUrl);#}
+        var url = document.getElementById(id);
         var options=$("#base_url_id option:selected");
         var baseUrl = options.val();
+        url.value = baseUrl+preUrl;
+    }
+    function playVideo(id) {
         var url = document.getElementById(id);
-        {#console.log(url.getAttribute("href"));#}
-        url.href = baseUrl+preUrl;
-        {#console.log(url.href);#}
+        ifram_id.src = url.value;
     }
 
      function mycheck(){

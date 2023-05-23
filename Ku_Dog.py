@@ -1,10 +1,7 @@
 import requests
 import time
 import hashlib
-import random
 import execjs
-from urllib import parse
-import urllib
 
 
 def get_html(url, params):
@@ -27,6 +24,7 @@ def get_html(url, params):
     else:
         print('请求出错')
 
+# 原方案
 def get_song_info(keyword,number=30):
     url = 'https://complexsearch.kugou.com/v2/search/song'
     data = str(int(time.time()*1000))
@@ -250,6 +248,59 @@ def get_song_info(keyword,number=30):
         print('获取歌曲信息出错了')
         exit(0)
 
+# md5加密
+def encryMd5(text):
+    # 创建md5对象
+    hl = hashlib.md5()
+
+    # Tips
+    # 此处必须声明encode
+    # 若写法为hl.update(str) 报错为： Unicode-objects must be encoded before hashing
+    hl.update(text.encode(encoding='utf-8'))
+    return hl.hexdigest()
+
+#　现方案
+def getSongInfo(keyword,number=30):
+    url = "https://complexsearch.kugou.com/v2/search/song"
+    currentTime = int(time.time()*1000)
+    encryData = 'NVPh5oo715z5DIWAeQlhMDsWXXQV4hwtappid=1014bitrate=0callback=callback123clienttime={}clientver=1000dfid=3exjle1Za6nC43jwQx38vNTgfilter=10inputtype=0iscorrection=1isfuzzy=0keyword={}mid=8dd89fe11afd55a15b4f4aa87a4c08f1page=1pagesize={}platform=WebFilterprivilege_filter=0srcappid=2919token=userid=0uuid=8dd89fe11afd55a15b4f4aa87a4c08f1NVPh5oo715z5DIWAeQlhMDsWXXQV4hwt'.format(currentTime, keyword, number)
+    signature = encryMd5(encryData)
+    kk = {
+        'callback': 'callback123',
+        'srcappid': '2919',
+        'clientver': '1000',
+        'clienttime': currentTime,
+        'mid': "8dd89fe11afd55a15b4f4aa87a4c08f1",
+        'uuid': "8dd89fe11afd55a15b4f4aa87a4c08f1",
+        'dfid': '3exjle1Za6nC43jwQx38vNTg',
+        'keyword': keyword,
+        'page': '1',
+        'pagesize': number,
+        'bitrate': '0',
+        'isfuzzy': '0',
+        'inputtype': '0',
+        'platform': 'WebFilter',
+        'userid': '0',
+        'iscorrection': '1',
+        'privilege_filter': '0',
+        'filter': '10',
+        'token': "",
+        "appid": "1014",
+        'signature': signature
+    }
+    try:
+        res = get_html(url, kk).text[12:-2]
+        song_info = eval(res)
+        song_info = song_info['data']['lists']
+        song_hash_id = []
+        song_name = []
+        for i in song_info:
+            song_hash_id.append((i['AlbumID'], i['FileHash']))
+            song_name.append(i['FileName'])
+        return song_hash_id, song_name
+    except:
+        print('获取歌曲信息出错了')
+        exit(0)
 def get_song(song_hash_id, filename):
     url = 'https://wwwapi.kugou.com/yy/index.php'
     song_url = []
@@ -265,6 +316,8 @@ def get_song(song_hash_id, filename):
                 '_': data_time,
             }
         res = requests.get(url, params=data).json()
+        if (res.get("status") == 0):
+            continue
         song_url.append(res['data']['play_url'])
     print(song_url)
     result = []
@@ -285,5 +338,5 @@ def get_song(song_hash_id, filename):
 
 
 def ku_dog(keyword):
-    song_hash_id, filename = get_song_info(keyword)
+    song_hash_id, filename = getSongInfo(keyword)
     return get_song(song_hash_id, filename)

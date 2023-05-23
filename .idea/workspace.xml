@@ -2,21 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="42679c99-19a1-415f-bdb2-dcefc04cd0e3" name="默认的" comment="">
-      <change afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xiage.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yocool.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Music.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Music.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/github_仓库/miGu.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/miGu.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/bgImg.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/foreground.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/midground.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/preview.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ku_Dog.py" beforeDir="false" afterPath="$PROJECT_DIR$/Ku_Dog.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Music.py" beforeDir="false" afterPath="$PROJECT_DIR$/Music.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sou-Hu-video.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/decoder2.py" beforeDir="false" afterPath="$PROJECT_DIR$/decoder2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/get_video.py" beforeDir="false" afterPath="$PROJECT_DIR$/get_video.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qq_music.py" beforeDir="false" afterPath="$PROJECT_DIR$/qq_music.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/get_video_2.py" beforeDir="false" afterPath="$PROJECT_DIR$/get_video_2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/github_仓库" beforeDir="false" afterPath="$PROJECT_DIR$/github_仓库" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kume_music.py" beforeDir="false" afterPath="$PROJECT_DIR$/kume_music.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/music.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/music.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/music_index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/music_index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/video.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/video.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -60,14 +61,15 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="ts.external.directory.path" value="D:\software\pycharm\PyCharm 2019.2.6\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\code\python_code\scrapy_code\Music" />
+      <recent name="D:\code\python_code\scrapy_code\Music\github_仓库" />
+      <recent name="D:\code\python_code\scrapy_code\Music\static\images" />
+      <recent name="D:\code\python_code\scrapy_code\Music\static\css" />
       <recent name="F:\python\python_code\cramler_code\flask_code\Music\static" />
-      <recent name="F:\python\python_code\cramler_code\flask_code\Music" />
-      <recent name="F:\python\python_code\cramler_code\flask_code\Music\static\css" />
-      <recent name="F:\python\python_code\cramler_code\flask_code\Music\static\image" />
-      <recent name="F:\python\python_code\cramler_code\flask_code\Music\static\js" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\python\python_code\cramler_code\flask_code\Music\static" />
@@ -85,8 +87,11 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.test_scrpay_Music">
-    <configuration name="4_10_1" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.Music">
+    <configuration name="video.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Music/templates/video.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="Ku_Dog" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Music" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -99,7 +104,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/4_10_1.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Ku_Dog.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -130,7 +135,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="get_video" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="get_video_2" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Music" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -143,7 +148,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/get_video.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/get_video_2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -152,7 +157,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="qq_music" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="kume_music" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Music" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -165,7 +170,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/qq_music.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/kume_music.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -174,7 +179,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="spider" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Music" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -187,29 +192,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/spider.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="test_scrpay_Music" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Music" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="D:\code\python_code\scrapy_code\Music\xiage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -243,20 +226,20 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="JavaScript Debug.video.html" />
       <item itemvalue="Python.Music" />
-      <item itemvalue="Python.get_video" />
-      <item itemvalue="Python.qq_music" />
-      <item itemvalue="Python.spider" />
-      <item itemvalue="Python.4_10_1" />
-      <item itemvalue="Python.test_scrpay_Music" />
+      <item itemvalue="Python.get_video_2" />
+      <item itemvalue="Python.test" />
+      <item itemvalue="Python.Ku_Dog" />
+      <item itemvalue="Python.kume_music" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.test_scrpay_Music" />
-        <item itemvalue="Python.4_10_1" />
-        <item itemvalue="Python.spider" />
-        <item itemvalue="Python.qq_music" />
-        <item itemvalue="Python.get_video" />
+        <item itemvalue="JavaScript Debug.video.html" />
+        <item itemvalue="Python.kume_music" />
+        <item itemvalue="Python.Ku_Dog" />
+        <item itemvalue="Python.get_video_2" />
+        <item itemvalue="Python.test" />
       </list>
     </recent_temporary>
   </component>
@@ -305,6 +288,23 @@
       <workItem from="1653478386922" duration="27000" />
       <workItem from="1680875870897" duration="6795000" />
       <workItem from="1680922474125" duration="6440000" />
+      <workItem from="1680939949440" duration="22625000" />
+      <workItem from="1681025700516" duration="5412000" />
+      <workItem from="1681044682709" duration="39000" />
+      <workItem from="1681189017262" duration="4526000" />
+      <workItem from="1681195011568" duration="1508000" />
+      <workItem from="1681302211646" duration="20000" />
+      <workItem from="1681815539991" duration="338000" />
+      <workItem from="1681831459678" duration="11000" />
+      <workItem from="1682498009838" duration="365000" />
+      <workItem from="1682499199709" duration="963000" />
+      <workItem from="1682668414591" duration="484000" />
+      <workItem from="1682756404428" duration="731000" />
+      <workItem from="1683255068199" duration="2082000" />
+      <workItem from="1683257203746" duration="2322000" />
+      <workItem from="1683293831562" duration="4493000" />
+      <workItem from="1683437830699" duration="27000" />
+      <workItem from="1684322338381" duration="537000" />
     </task>
     <servers />
   </component>
@@ -343,15 +343,24 @@
         </breakpoint>
       </default-breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="row_data['song_url']" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Music$qq_music.coverage" NAME="qq_music Coverage Results" MODIFIED="1647577856508" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Music$4_10_1.coverage" NAME="4_10_1 Coverage Results" MODIFIED="1649595780879" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Music$Ku_Dog.coverage" NAME="Ku_Dog Coverage Results" MODIFIED="1683257768003" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Music$spider.coverage" NAME="spider Coverage Results" MODIFIED="1647580117063" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Music$Music.coverage" NAME="Music Coverage Results" MODIFIED="1653031386755" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/Music$xiage.coverage" NAME="xiage Coverage Results" MODIFIED="1680940838937" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Music$Music.coverage" NAME="Music Coverage Results" MODIFIED="1683298339002" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/Music$test_scrpay_Music.coverage" NAME="test_scrpay_Music Coverage Results" MODIFIED="1680928794148" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Music$test.coverage" NAME="test Coverage Results" MODIFIED="1682499709535" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Music$decoder2.coverage" NAME="decoder2 Coverage Results" MODIFIED="1614259518079" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Music$get_video.coverage" NAME="get_video Coverage Results" MODIFIED="1614566026641" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Music$kume_music.coverage" NAME="kume_music Coverage Results" MODIFIED="1614401936197" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Music$get_video_2.coverage" NAME="get_video_2 Coverage Results" MODIFIED="1682756481325" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Music$kume_music.coverage" NAME="kume_music Coverage Results" MODIFIED="1683258896750" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

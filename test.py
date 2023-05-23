@@ -1,6 +1,7 @@
 import requests
-from hyper.contrib import HTTP20Adapter
+# from hyper.contrib import HTTP20Adapter
 import time
+import json
 
 def get():
     url = 'https://upos-sz-mirrorcos.bilivideo.com/upgcxcode/56/74/184207456/184207456-1-30064.m4s'
@@ -30,10 +31,27 @@ def get():
         'scheme': 'https',
     }
     sessions = requests.session()
-    sessions.mount('https://upos-sz-mirrorcos.bilivideo.com', HTTP20Adapter())
+    # sessions.mount('https://upos-sz-mirrorcos.bilivideo.com', HTTP20Adapter())
     print(int(time.time()))
-    res = requests.get(url,data = data,headers=header)
+    res = requests.get(url, data=data, headers=header)
     print(res.status_code)
 
+def testRegister():
+    url = "http://172.19.16.1:8080/api/user/register/"
+    data = {
+        "userAccount": "zhangshan",
+        "userPassword": "12345678",
+        "checkPassword": "12345678",
+        "planetCode": "5"
+    }
+    headers = {
+        'user-agent': 'Mozilla/5.0(Windows NT 10.0;WOW64) AppleWebKit/537.36(KHTML,likeGecko) Chrome/84.0.4147.105Safari/537.36',
+        "Content-Type": "application/json",
+    }
+    responce = requests.post(url, data=json.dumps(data), headers = headers)
+    print(responce.status_code)
+    print(responce.json())
+
 if __name__ == '__main__':
-    get()
+    # get()
+    testRegister()
